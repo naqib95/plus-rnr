@@ -1,0 +1,40 @@
+<nb-layout>
+
+  <nb-layout-header *ngIf="topBarFlag" fixed>
+      
+      <!-- Side Menu Toggle Burger Button -->
+      <nb-card-body style="margin-left:-1.9rem;" (click)="toggle()" class="sidebar-toggle">
+          <nb-actions size="medium">
+            <nb-action *ngIf="sideBarFlag" style="padding-left: 0 !important;" icon="menu-2-outline">
+            </nb-action>
+            <nb-action style="padding-left: 1rem !important;">
+              <img (click)="onClickLogo()" style="width: 40pt; height: 40pt;" src="../assets/plus/PLUS_Expressways_Logo.png">
+            </nb-action>
+          </nb-actions>
+      </nb-card-body>
+
+      <p *ngIf="!sideBarFlag" style="align-content: center; font-size: 25px;">{{this.locationName}}</p>
+      
+      <!-- User Profile -->
+      <nb-user *ngIf="sideBarFlag"
+          size="medium"
+          name={{displayName}}
+          title={{role}}
+          color="#cccccc"
+          [nbContextMenu]="profileItems"
+          nbContextMenuTag="profile-menu">
+      </nb-user>  
+  
+  </nb-layout-header>
+
+  <!-- Side Menu -->
+  <nb-sidebar *ngIf="sideBarFlag" responsive  style="min-width: 70px;" class="start expand">
+      <nb-menu [items]="items" style="min-width: 70px;">
+      </nb-menu>
+  </nb-sidebar>
+
+  <nb-layout-column style="padding: 0px;">
+    <router-outlet></router-outlet>
+  </nb-layout-column>
+
+</nb-layout>

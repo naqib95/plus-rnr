@@ -1,0 +1,23 @@
+<div style="padding: 15px;">
+    <nb-card>
+        <nb-card-header><h6>Upload File Storage</h6></nb-card-header>
+        <nb-card-body>
+            <p>Please select a folder before uploading files. All fields are required.</p>
+            <div >
+                <p class="label-folder"><b>Folder Name</b></p>
+                <nb-select fullWidth placeholder="Select Folder">
+                    <nb-option value="1">Project</nb-option>
+                    <nb-option value="2">Other</nb-option>
+                </nb-select>
+
+                <p class="label-folder"><b>File</b></p>
+                <input style="font-weight: 100;" type="file" nbInput fullWidth status="basic" placeholder="Upload File">
+
+            </div>
+            <div class="dropdown-button">
+                <button nbButton size="small">Cancel</button>
+                <button style="margin-left: 5px;" nbButton size="small" status="primary">Upload</button>
+            </div>
+        </nb-card-body>
+    </nb-card>
+</div>

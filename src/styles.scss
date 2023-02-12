@@ -1,0 +1,23 @@
+@use 'themes' as *;
+
+@use '@nebular/theme/styles/globals' as *;
+
+@include nb-install() {
+  @include nb-theme-global();
+};
+/* You can add global styles to this file, and also import other style files */
+
+// Stepper Global CSS
+.step-content {
+  width: 100% !important;
+}
+
+// Datatable Global CSS
+.dataTables_wrapper .dataTables_length {
+  float: left;
+  padding-bottom: 1rem !important;
+}
+
+.reveal-button {
+  z-index: 999;
+}

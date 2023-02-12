@@ -1,0 +1,61 @@
+<div class="container-fluid">
+    <gridster style="background-color: #edf1f7;" [options]="options">
+        <gridster-item [item]="item" *ngFor="let item of dashboard">
+            <nb-reveal-card style="text-align: center; height: 100%;" >
+                <nb-card-front style="text-align: center; height: 100%;">
+                  <nb-card style="text-align: center; height: 100%;">
+                    <nb-card-header style="font-size: 11px;">{{ item['header'] }}</nb-card-header>
+                    <nb-card-body style="padding: 0px; overflow: hidden;">
+                        <p *ngIf="item['maintenance']" class="maintenance-label"><b>Under Maintenance</b></p>
+                        <img *ngIf="!item['maintenance']" (click)="imageClick(item['code'])" src="{{ item['image'] }}" style="width: 100%; height: 100%; ">
+                        <img *ngIf="item['maintenance']" src="{{ item['image'] }}" style="width: 100%; height: 100%; filter: grayscale(1);">
+                    </nb-card-body>
+                    <nb-card-footer>
+                        <div style="position: relative;">
+                            <div style="width: 50%; float: left;" >
+                                {{ item['rating'] }} 
+                                <nb-icon icon="star" status="warning">
+                                </nb-icon>
+                            </div>
+                            <div style="width: 50%; float: right;">
+                                <nb-icon *ngIf="!item['maintenance']" (click)="commentClick(item['code'])" icon="message-circle-outline" status="primary" >
+                                </nb-icon>
+                                <nb-icon *ngIf="item['maintenance']" icon="message-circle-outline" status="primary">
+                                </nb-icon>
+                            </div>
+                        </div>
+                    </nb-card-footer>
+                  </nb-card>
+                </nb-card-front>
+                <nb-card-back style="text-align: center; height: 100%; z-index: 3;">
+                  <nb-card style="text-align: center; height: 100%;">
+                    <nb-card-header style="font-size: 11px;">{{ item['header'] }}</nb-card-header>
+                    <nb-card-body>
+                        <div>
+                            <p>
+                                <b>{{ item['topRater'] }}:</b> {{ item['topRating'] }}  <nb-icon icon="star" status="warning"></nb-icon>
+                            </p>
+                            <i>
+                                "{{ item['topReview'] }}"
+                            </i>
+                        </div>
+                    </nb-card-body>
+              
+                    <nb-card-footer> 
+                        <div style="position: relative;">
+                            <div style="width: 100%;">
+                                <nb-icon *ngIf="!item['maintenance']" (click)="commentClick(item['code'])" icon="message-circle-outline" status="primary">
+                                </nb-icon>
+                                <nb-icon *ngIf="item['maintenance']" icon="message-circle-outline" status="primary">
+                                </nb-icon>
+                            </div>
+                        </div> 
+                </nb-card-footer>
+                  </nb-card>
+                </nb-card-back>
+              </nb-reveal-card>
+        </gridster-item>
+    </gridster>
+</div>
+
+

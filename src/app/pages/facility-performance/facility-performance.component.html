@@ -1,0 +1,116 @@
+<div style="padding: 15px;">
+    <nb-card>
+        <nb-card-header><h6>Facility Data Submissions by Month (2021)</h6></nb-card-header>
+        <nb-card-body>
+
+        <table [nbTreeGrid]="data" equalColumnsWidth>
+
+            <tr nbTreeGridHeaderRow *nbTreeGridHeaderRowDef="allColumns"></tr>
+            <tr nbTreeGridRow *nbTreeGridRowDef="let row; columns: allColumns"></tr>
+
+            <ng-container nbTreeGridColumnDef="facility">
+            <th nbTreeGridHeaderCell *nbTreeGridHeaderCellDef style ="width:270px">Facility</th>
+            <td nbTreeGridCell *nbTreeGridCellDef="let row" style ="font-size: 13px; padding: 5px !important">{{row.data.facility}}</td>
+            </ng-container>
+
+            <ng-container nbTreeGridColumnDef="jan">
+                <th class="column-header-format" nbTreeGridHeaderCell *nbTreeGridHeaderCellDef>JAN</th>
+                <td class="grid-format" nbTreeGridCell *nbTreeGridCellDef="let row">
+                    <button class="remove-padding" *ngIf="row.data.jan === true" nbButton status="success"><nb-icon icon="checkmark-outline"></nb-icon></button>
+                    <button class="remove-padding" *ngIf="row.data.jan === false" nbButton status="danger"><nb-icon icon="close-outline"></nb-icon></button>
+                </td>
+            </ng-container>
+
+            <ng-container nbTreeGridColumnDef="feb">
+                <th class="column-header-format" nbTreeGridHeaderCell *nbTreeGridHeaderCellDef>FEB</th>
+                <td class="grid-format" nbTreeGridCell *nbTreeGridCellDef="let row">
+                    <button class="remove-padding" *ngIf="row.data.feb === true" nbButton status="success"><nb-icon icon="checkmark-outline"></nb-icon></button>
+                    <button class="remove-padding" *ngIf="row.data.feb === false" nbButton status="danger"><nb-icon icon="close-outline"></nb-icon></button>
+                </td>
+            </ng-container>
+
+            <ng-container nbTreeGridColumnDef="mar" >
+                <th class="column-header-format" nbTreeGridHeaderCell *nbTreeGridHeaderCellDef>MAR</th>
+                <td class="grid-format" nbTreeGridCell *nbTreeGridCellDef="let row">
+                    <button class="remove-padding" *ngIf="row.data.mar === true" nbButton status="success"><nb-icon icon="checkmark-outline"></nb-icon></button>
+                    <button class="remove-padding" *ngIf="row.data.mar === false" nbButton status="danger"><nb-icon icon="close-outline"></nb-icon></button>
+                </td>
+            </ng-container>
+        
+            <ng-container nbTreeGridColumnDef="apr" >
+                <th class="column-header-format" nbTreeGridHeaderCell *nbTreeGridHeaderCellDef>APR</th>
+                <td class="grid-format" nbTreeGridCell *nbTreeGridCellDef="let row">
+                    <button class="remove-padding" *ngIf="row.data.apr === true" nbButton status="success"><nb-icon icon="checkmark-outline"></nb-icon></button>
+                    <button class="remove-padding" *ngIf="row.data.apr === false" nbButton status="danger"><nb-icon icon="close-outline"></nb-icon></button>
+                </td>
+            </ng-container>
+            
+            <ng-container nbTreeGridColumnDef="may" >
+                <th class="column-header-format" nbTreeGridHeaderCell *nbTreeGridHeaderCellDef>MAY</th>
+                <td class="grid-format" nbTreeGridCell *nbTreeGridCellDef="let row">
+                    <button class="remove-padding" *ngIf="row.data.may === true" nbButton status="success"><nb-icon icon="checkmark-outline"></nb-icon></button>
+                    <button class="remove-padding" *ngIf="row.data.may === false" nbButton status="danger"><nb-icon icon="close-outline"></nb-icon></button>
+                </td>
+            </ng-container>
+
+            <ng-container nbTreeGridColumnDef="jun" >
+                <th class="column-header-format" nbTreeGridHeaderCell *nbTreeGridHeaderCellDef>JUN</th>
+                <td class="grid-format" nbTreeGridCell *nbTreeGridCellDef="let row">
+                    <button class="remove-padding" *ngIf="row.data.jun === true" nbButton status="success"><nb-icon icon="checkmark-outline"></nb-icon></button>
+                    <button class="remove-padding" *ngIf="row.data.jun === false" nbButton status="danger"><nb-icon icon="close-outline"></nb-icon></button>
+                </td>
+            </ng-container>
+
+            <ng-container nbTreeGridColumnDef="jul" >
+                <th class="column-header-format" nbTreeGridHeaderCell *nbTreeGridHeaderCellDef>JUL</th>
+                <td class="grid-format" nbTreeGridCell *nbTreeGridCellDef="let row">
+                    <button class="remove-padding" *ngIf="row.data.jul === true" nbButton status="success"><nb-icon icon="checkmark-outline"></nb-icon></button>
+                    <button class="remove-padding" *ngIf="row.data.jul === false" nbButton status="danger"><nb-icon icon="close-outline"></nb-icon></button>
+                </td>
+            </ng-container>
+
+            <ng-container nbTreeGridColumnDef="aug" >
+                <th class="column-header-format" nbTreeGridHeaderCell *nbTreeGridHeaderCellDef>AUG</th>
+                <td class="grid-format" nbTreeGridCell *nbTreeGridCellDef="let row">
+                    <button class="remove-padding" *ngIf="row.data.aug === true" nbButton status="success"><nb-icon icon="checkmark-outline"></nb-icon></button>
+                    <button class="remove-padding" *ngIf="row.data.aug === false" nbButton status="danger"><nb-icon icon="close-outline"></nb-icon></button>
+                </td>
+            </ng-container>
+
+            <ng-container nbTreeGridColumnDef="sept" >
+                <th class="column-header-format" nbTreeGridHeaderCell *nbTreeGridHeaderCellDef>SEPT</th>
+                <td class="grid-format" nbTreeGridCell *nbTreeGridCellDef="let row">
+                    <button class="remove-padding" *ngIf="row.data.sept === true" nbButton status="success"><nb-icon icon="checkmark-outline"></nb-icon></button>
+                    <button class="remove-padding" *ngIf="row.data.sept === false" nbButton status="danger"><nb-icon icon="close-outline"></nb-icon></button>
+                </td>
+            </ng-container>
+
+            <ng-container nbTreeGridColumnDef="oct" >
+                <th class="column-header-format" nbTreeGridHeaderCell *nbTreeGridHeaderCellDef>OCT</th>
+                <td class="grid-format" nbTreeGridCell *nbTreeGridCellDef="let row">
+                    <button class="remove-padding" *ngIf="row.data.oct === true" nbButton status="success"><nb-icon icon="checkmark-outline"></nb-icon></button>
+                    <button class="remove-padding" *ngIf="row.data.oct === false" nbButton status="danger"><nb-icon icon="close-outline"></nb-icon></button>
+                </td>
+            </ng-container>
+
+            <ng-container nbTreeGridColumnDef="nov" >
+                <th class="column-header-format" nbTreeGridHeaderCell *nbTreeGridHeaderCellDef>NOV</th>
+                <td class="grid-format" nbTreeGridCell *nbTreeGridCellDef="let row">
+                    <button class="remove-padding" *ngIf="row.data.nov === true" nbButton status="success"><nb-icon icon="checkmark-outline"></nb-icon></button>
+                    <button class="remove-padding" *ngIf="row.data.nov === false" nbButton status="danger"><nb-icon icon="close-outline"></nb-icon></button>
+                </td>
+            </ng-container>
+
+            <ng-container nbTreeGridColumnDef="dec" >
+                <th class="column-header-format" nbTreeGridHeaderCell *nbTreeGridHeaderCellDef>DEC</th>
+                <td class="grid-format" nbTreeGridCell *nbTreeGridCellDef="let row">
+                    <button class="remove-padding" *ngIf="row.data.dec === true" nbButton status="success"><nb-icon icon="checkmark-outline"></nb-icon></button>
+                    <button class="remove-padding" *ngIf="row.data.dec === false" nbButton status="danger"><nb-icon icon="close-outline"></nb-icon></button>
+                </td>
+            </ng-container>
+        
+        </table>
+
+        </nb-card-body>
+    </nb-card>
+</div>

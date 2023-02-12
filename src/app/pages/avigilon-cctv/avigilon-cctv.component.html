@@ -1,0 +1,38 @@
+<div style="padding: 15px;">
+    <nb-card>
+        <nb-card-header style="position: relative;"><h6>Avigilon CCTV Mechanical Floor Alarms
+            <nb-badge *ngIf="dataDone" text="{{totalObjects}}" status="danger" position="top left"></nb-badge>
+            <input style="text-align: right; float: right;" nbInput placeholder={{dateModel}} [nbDatepicker]="dateTimePicker">
+            <nb-datepicker style="text-align: right; float: right;" (dateChange)="selectDate($event)" #dateTimePicker></nb-datepicker>
+            <nb-select style="text-align: right; float: right; padding-right: 0.5rem;" (selectedChange)="dropdownChange($event)" placeholder="All Devices">
+                <nb-option value="All">All Devices</nb-option>
+                <nb-option *ngFor="let device of uniqueDevice" [value]="device"> {{ device }} </nb-option>
+            </nb-select>
+        </h6>
+        
+        </nb-card-header>
+        <nb-card-body>
+
+            <div style="text-align: center;" *ngIf="!dataDone">Loading...</div>
+            <table *ngIf="dataDone" datatable [dtOptions]="dtOptions" class="row-border hover table-bordered table-striped ">
+                <thead>
+                <tr>
+                    <!-- <th>Name</th> -->
+                    <th>Cam</th>
+                    <th style="min-width: 200px;">Time</th>
+                    <th style="text-align: right;">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let object of objects">
+                    <!-- <td>{{ object?.name }}</td> -->
+                    <td>{{ ((((object?.name).split("."))[0]).split("/"))[2] }}</td>
+                    <td >{{ this.dateFormat(((object.name).split("."))[2] ) }}</td>
+                    <td style="text-align: right;"><button nbButton size="small" status="warning" (click)="open(object.name)"><nb-icon icon="eye-outline"></nb-icon>View</button></td>
+                </tr>
+                </tbody>
+            </table>
+        </nb-card-body>
+    </nb-card>
+</div>
+  

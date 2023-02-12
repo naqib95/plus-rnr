@@ -1,0 +1,194 @@
+<div style="padding: 15px;">
+    <nb-card style="height: 100%;" size="large">
+        <nb-card-header><h6>Facility Report</h6></nb-card-header>
+        <nb-card-body>
+            
+        <nb-stepper disableStepNavigation orientation="vertical">
+            
+            <!-- Date & Facility Selection -->
+            <nb-step label="Date & Facility Selection">
+                <nb-card class="card">
+                    <nb-card-header class="facility-stepper-card-header"><h5>Date & Facility Selection</h5></nb-card-header>
+                    <p>Please select a facility and time period for this report. All fields are required.</p>
+                    <div class="dropdown-step">
+                        <nb-select fullWidth placeholder="Select Facility">
+                            <nb-option value="1">Option 1</nb-option>
+                            <nb-option value="2">Option 2</nb-option>
+                            <nb-option value="3">Option 3</nb-option>
+                            <nb-option value="4">Option 4</nb-option>
+                        </nb-select>
+                    </div>
+                    <div class="dropdown-step">
+                        <nb-select fullWidth placeholder="Select Month">
+                            <nb-option value="1">Option 1</nb-option>
+                            <nb-option value="2">Option 2</nb-option>
+                            <nb-option value="3">Option 3</nb-option>
+                            <nb-option value="4">Option 4</nb-option>
+                        </nb-select>
+                    </div>
+                </nb-card>
+                <div class="dropdown-button">
+                    <button nbButton nbStepperNext size="small" status="primary">next</button>
+                </div>
+            </nb-step>
+            
+            <!-- Air Conditioning -->
+            <nb-step label="Air Conditioning">
+                <nb-card class="card">
+                    <nb-card-header class="facility-stepper-card-header"><h5>Air Conditioning</h5></nb-card-header>
+                    <p>Please input your data. All fields are required.</p>
+                    <div class="dropdown-step">
+                        <p class="label-step"><b>Total Number of Complaints</b></p>
+                        <input type="text" nbInput fullWidth status="basic" placeholder="0">
+                    </div>
+                    <div class="dropdown-step">
+                        <p class="label-step"><b>Total Number of Breakdowns</b></p>
+                        <input type="text" nbInput fullWidth status="basic" placeholder="0">
+                    </div>
+                </nb-card>
+                <div class="dropdown-button">
+                    <button nbButton size="small" nbStepperPrevious>previous</button>
+                    <button style="margin-left: 5px;" nbButton size="small" status="primary" nbStepperNext>next</button>
+                </div>
+            </nb-step>
+
+            <!-- Vertical Transportation -->
+            <nb-step label="Vertical Transportation">
+                <nb-card class="card">
+                    <nb-card-header class="facility-stepper-card-header"><h5>Vertical Transportation</h5></nb-card-header>
+                    <p>Please input your data. All fields are required.</p>
+                    <div class="dropdown-step">
+                        <p class="label-step"><b>Total Number of Mantraps</b></p>
+                        <input type="text" nbInput fullWidth status="basic" placeholder="0">
+                    </div>
+                    <div class="dropdown-step">
+                        <p class="label-step"><b>Total Number of Breakdowns</b></p>
+                        <input type="text" nbInput fullWidth status="basic" placeholder="0">
+                    </div>
+                </nb-card>
+                <div class="dropdown-button">
+                    <button nbButton size="small" nbStepperPrevious>previous</button>
+                    <button style="margin-left: 5px;" nbButton size="small" status="primary" nbStepperNext>next</button>
+                </div>
+            </nb-step>
+
+            <!-- Indoor Air Quality -->
+            <nb-step label="Indoor Air Quality">
+                <nb-card class="card">
+                    <nb-card-header class="facility-stepper-card-header"><h5>Indoor Air Quality</h5></nb-card-header>
+                    <p>Please input your data. All fields are required.</p>
+                    <div class="dropdown-step">
+                        <p class="label-step"><b>Carbon Dioxide (CO2) / Parts Per Million (ppm)</b></p>
+                        <input type="text" nbInput fullWidth status="basic" placeholder="400">
+                    </div>
+                    <div class="dropdown-step">
+                        <p class="label-step"><b>Carbon Monoxide (CO) / Parts Per Million (ppm)</b></p>
+                        <input type="text" nbInput fullWidth status="basic" placeholder="10.00">
+                    </div>
+                    <div class="dropdown-step">
+                        <p class="label-step"><b>Formaldehyde / Parts Per Million (ppm)</b></p>
+                        <input type="text" nbInput fullWidth status="basic" placeholder="0.10">
+                    </div>
+                    <div class="dropdown-step">
+                        <p class="label-step"><b>Volatile Organic Compound (VOC) / Parts Per Million (ppm)</b></p>
+                        <input type="text" nbInput fullWidth status="basic" placeholder="3.00">
+                    </div>
+                    <div class="dropdown-step">
+                        <p class="label-step"><b>Temperature / Celcius (°C)</b></p>
+                        <input type="text" nbInput fullWidth status="basic" placeholder="24.00">
+                    </div>
+                    <div class="dropdown-step">
+                        <p class="label-step"><b>Relative Humidity / RH (%)</b></p>
+                        <input type="text" nbInput fullWidth status="basic" placeholder="55.00">
+                    </div>
+                </nb-card>
+                <div class="dropdown-button">
+                    <button nbButton size="small" nbStepperPrevious>previous</button>
+                    <button style="margin-left: 5px;" nbButton size="small" status="primary" nbStepperNext>next</button>
+                </div>
+            </nb-step>
+
+            <!-- Generator Set -->
+            <nb-step label="Generator Set">
+                <nb-card class="card">
+                    <nb-card-header class="facility-stepper-card-header"><h5>Generator Set</h5></nb-card-header>
+                    <p>Please input your data. All fields are required.</p>
+                    <div class="dropdown-step">
+                        <p class="label-step"><b>Kick-in Timeliness / Seconds</b></p>
+                        <input type="text" nbInput fullWidth status="basic" placeholder="10">
+                    </div>
+                </nb-card>
+                <div class="dropdown-button">
+                    <button nbButton size="small" nbStepperPrevious>previous</button>
+                    <button style="margin-left: 5px;" nbButton size="small" status="primary" nbStepperNext>next</button>
+                </div>
+            </nb-step>
+
+            <!-- Domestic Water Supply -->
+            <nb-step label="Domestic Water Supply">
+                <nb-card class="card">
+                    <nb-card-header class="facility-stepper-card-header"><h5>Domestic Water Supply</h5></nb-card-header>
+                    <p>Please input your data. All fields are required.</p>
+                    <div class="dropdown-step">
+                        <p class="label-step"><b>Continuous Water Disruption / Hours</b></p>
+                        <input type="text" nbInput fullWidth status="basic" placeholder="0">
+                    </div>
+                </nb-card>
+                <div class="dropdown-button">
+                    <button nbButton size="small" nbStepperPrevious>previous</button>
+                    <button style="margin-left: 5px;" nbButton size="small" status="primary" nbStepperNext>next</button>
+                </div>
+            </nb-step>
+
+            <!-- Health, Safety, Security & Environment (HSSE) -->
+            <nb-step label="HSSE">
+                <nb-card class="card">
+                    <nb-card-header class="facility-stepper-card-header"><h5>Health, Safety, Security & Environment (HSSE)</h5></nb-card-header>
+                    <p>Please input your data. All fields are required.</p>
+                    <div class="dropdown-step">
+                        <p class="label-step"><b>Number of COVID-19 Cases Reported / Case Count</b></p>
+                        <input type="text" nbInput fullWidth status="basic" placeholder="0">
+                    </div>
+                    <div class="dropdown-step">
+                        <p class="label-step"><b>Number of Manhours / Hours Per Month</b></p>
+                        <input type="text" nbInput fullWidth status="basic" placeholder="0">
+                    </div>
+                    <div class="dropdown-step">
+                        <p class="label-step"><b>Number of Hours Since Last Lost Time Injury (LTI) / Hours</b></p>
+                        <input type="text" nbInput fullWidth status="basic" placeholder="0">
+                    </div>
+                    <div class="dropdown-step">
+                        <p class="label-step"><b>Lost Time Injury Frequency Rate (LTIFR) / Per Million Manhours</b></p>
+                        <input type="text" nbInput fullWidth status="basic" placeholder="0">
+                    </div>
+                    <div class="dropdown-step">
+                        <p class="label-step"><b>Loss Of Primary Containment (LOPC) / Incident Count</b></p>
+                        <input type="text" nbInput fullWidth status="basic" placeholder="0">
+                    </div>
+                    <div class="dropdown-step">
+                        <p class="label-step"><b>Major Fire / Incident Count</b></p>
+                        <input type="text" nbInput fullWidth status="basic" placeholder="0">
+                    </div>
+                </nb-card>
+                <div class="dropdown-button">
+                    <button nbButton size="small" nbStepperPrevious>previous</button>
+                    <button style="margin-left: 5px;" nbButton size="small" status="primary" nbStepperNext>next</button>
+                </div>
+            </nb-step>
+
+            <!-- Data Review -->
+            <nb-step label="Data Review ">
+                <nb-card class="card">
+                    <nb-card-header class="facility-stepper-card-header"><h5>Data Review </h5></nb-card-header>
+                    <p>Please review your data. If you need to make any changes, click on a step number to revisit that dataset. Select the Submit button once you are ready to proceed.</p>
+                </nb-card>
+                <div class="dropdown-button">
+                    <button nbButton nbStepperPrevious>previous</button>
+                    <button style="margin-left: 5px;" nbButton size="small" status="primary" nbStepperNext>submit</button>
+                </div>
+            </nb-step>
+
+        </nb-stepper>   
+        </nb-card-body>
+    </nb-card>
+</div>
