@@ -94,8 +94,8 @@ export class UserPageComponent implements OnInit{
 
   ngOnInit(): void {
     this.options = {
-      maxCols: 8,
-      minCols: 8,
+      maxCols: 12,
+      minCols: 12,
       maxRows: 30,
       minRows: 8,
       gridType: GridType.ScrollVertical,
