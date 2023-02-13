@@ -1,1 +1,35 @@
-<p>menu-page works!</p>
+<div class="container-fluid">
+    <gridster style="background-color: #edf1f7;" [options]="options">
+        <gridster-item [item]="item" *ngFor="let item of dashboard">
+            <nb-reveal-card style="text-align: center; height: 100%;" >
+                <nb-card-front style="text-align: center; height: 100%;">
+                  <nb-card style="text-align: center; height: 100%;">
+                    <nb-card-header style="font-size: 11px; padding: 12px !important">{{ item['name'] }}</nb-card-header>
+                    <nb-card-body style="padding: 0px; overflow: hidden;">
+                        <p *ngIf="item['notAvailable']" class="maintenance-label"><b>Not Available</b></p>
+                        <img *ngIf="!item['notAvailable']" src="{{ item['image'] }}" style="width: 100%; height: 100%; ">
+                        <img *ngIf="item['notAvailable']" src="{{ item['image'] }}" style="width: 100%; height: 100%; filter: grayscale(1);">
+                    </nb-card-body>
+                    <nb-card-footer>
+                        
+                    </nb-card-footer>
+                  </nb-card>
+                </nb-card-front>
+                <nb-card-back style="text-align: center; height: 100%; z-index: 3;">
+                  <nb-card style="text-align: center; height: 100%;">
+                    <nb-card-header style="font-size: 11px; padding: 12px !important">{{ item['name'] }}</nb-card-header>
+                    <nb-card-body>
+                        
+                    </nb-card-body>
+              
+                    <nb-card-footer> 
+                         
+                    </nb-card-footer>
+                  </nb-card>
+                </nb-card-back>
+              </nb-reveal-card>
+        </gridster-item>
+    </gridster>
+</div>
+
+

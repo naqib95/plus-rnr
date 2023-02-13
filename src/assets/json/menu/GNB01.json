@@ -1,0 +1,3 @@
+[
+    { "cols": 2, "rows": 2, "y": 0, "x": 0, "type":"food" ,"name":"Nasi Ayam", "image": "../../../assets/plus/tenants/chicken-duck.jpg", "recommended":false, "notAvailable":false}
+]

@@ -1,10 +1,26 @@
-<nb-card>
+<nb-card style="width: 100%; max-height: 100%;">
+  <nb-card-header>Reviews</nb-card-header>
     <nb-list
       nbInfiniteList
       listenWindowScroll
       [threshold]="500">
-      <nb-list-item *ngFor="let item of data">
-        {{item['name']}}
+      <nb-list-item style="display: inline;" *ngFor="let item of data">
+          <div style="width: 100%;"><b>{{item['name']}}:</b> {{item['rating']}} <nb-icon icon="star" status="warning"></nb-icon></div>
+          <div style="float: left; clear: both; vertical-align: bottom; padding-top: 5px;"><i>"{{item['review']}}"</i></div>
       </nb-list-item>
     </nb-list>
+  <nb-card-footer>
+    <div style="padding-bottom: 0.25rem;">
+      <div><b style="padding-bottom: 0.25rem;">Leave a Review</b></div> <br>
+        <div style="display: flex;">
+          <div style="width: 50%; padding-right: 0.5rem;">Name: <input [(ngModel)]="nameNgModel" type="text" nbInput fullWidth fieldSize="small" placeholder="Name" style="padding-bottom: 0.2rem;"></div>
+          <div style="width: 50%;">Rating: <input [(ngModel)]="ratingNgModel" type="number" min="1" max="5" nbInput fullWidth fieldSize="small" placeholder="Rating" style="padding-bottom: 0.2rem;"></div>
+        </div>
+        <br>
+      <div>Comment: <textarea [(ngModel)]="textareaNgModel" nbInput fullWidth placeholder="Comment" style="padding-bottom: 0.2rem; max-height: 200px;"></textarea></div>
+    </div>
+    
+    <button style="float: right;" (click)="submitReview()" nbButton status="primary">Submit</button>
+    <button  style="float: right; margin-right: 10px;" nbButton (click)="closeDialog()">Close</button>
+  </nb-card-footer>
 </nb-card>

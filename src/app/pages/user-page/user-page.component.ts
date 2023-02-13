@@ -14,7 +14,7 @@ import { AppComponent } from 'src/app/app.component';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ReviewListComponent } from 'src/app/dialog/review-list/review-list.component'
-import { NbDialogService } from '@nebular/theme';
+import { NbDialogRef, NbDialogService } from '@nebular/theme';
 
 
 
@@ -35,6 +35,7 @@ export class UserPageComponent implements OnInit{
   private _jsonURL = '';
   private listJsonURL = '';
 
+
   options!: Safe;
   dashboard: Array<GridsterItem> =[];
   listJson: any;
@@ -49,6 +50,7 @@ export class UserPageComponent implements OnInit{
     this._jsonURL = "../../../assets/json/"+this.location+".json";
     this.listJsonURL = "../../../assets/json/list.json";
     this.getJSON().subscribe(data => {
+      console.log(data)
       this.dashboard = data;
      });
     this.getListJSON().subscribe(data => {
@@ -113,7 +115,6 @@ export class UserPageComponent implements OnInit{
         stop: UserPageComponent.eventStop,
         start: UserPageComponent.eventStart,
         dropOverItems: true,
-        // dropOverItemsCallback: TestComponent.overlapEvent
       },
       disableWindowResize: false,
       resizable: {
@@ -140,12 +141,15 @@ export class UserPageComponent implements OnInit{
   }
 
   imageClick(event: any) {
-    console.log(event)
+    this.router.navigate(['/menu-page',{code: event}])
   }
 
   commentClick(event: any) {
-    console.log(event)
     this.dialogService.open(ReviewListComponent);
+  }
+
+  closeComment() {
+    
   }
 
   revealClick(event: any) {

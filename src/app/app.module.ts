@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import {NgForOf} from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbMenuModule, NbCardModule, NbIconModule, NbActionsModule, NbUserModule, NbStepperModule, NbButtonModule, NbSelectModule, NbOptionModule, NbInputModule, NbTreeGridModule, NbContextMenuModule, NbDialogModule, NbCalendarModule, NbBadgeModule, NbDatepickerModule, NbListModule } from '@nebular/theme';
+import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbMenuModule, NbCardModule, NbIconModule, NbActionsModule, NbUserModule, NbStepperModule, NbButtonModule, NbSelectModule, NbOptionModule, NbInputModule, NbTreeGridModule, NbContextMenuModule, NbDialogModule, NbCalendarModule, NbBadgeModule, NbDatepickerModule, NbListModule, } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { HomeComponent } from './pages/home/home.component';
 import { FacilityReportComponent } from './pages/facility-report/facility-report.component';
@@ -49,6 +50,7 @@ import { ReviewListComponent } from './dialog/review-list/review-list.component'
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule,
     
     // Nebular Modules
     NbThemeModule.forRoot({ name: 'corporate' }),
@@ -98,12 +100,15 @@ import { ReviewListComponent } from './dialog/review-list/review-list.component'
     
     KpsocDialogComponent,
     AvigilonCctvComponent,
-    ReviewListComponent
+    ReviewListComponent,
+    UserPageComponent
     
   ],
   providers: [
     AuthService,
-    TestComponent
+    TestComponent,
+    UserPageComponent,
+    AppComponent
     // { provide: HTTP_INTERCEPTORS, useClass: AuthService, multi: true }
   ],
   bootstrap: [AppComponent]
