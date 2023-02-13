@@ -1,3 +1,11 @@
 [
-    { "cols": 2, "rows": 2, "y": 0, "x": 0, "type":"food" ,"name":"Nasi Ayam", "image": "../../../assets/plus/tenants/chicken-duck.jpg", "recommended":false, "notAvailable":false}
+    { "cols": 2, "rows": 2, "y": 0, "x": 0, "type":"food" ,"name":"Nasi Ayam", "price":"7.00","image": "../../../assets/plus/menu/nasi_ayam.jpeg", "recommended":true, "notAvailable":false},
+    { "cols": 2, "rows": 2, "y": 0, "x": 0, "type":"food" ,"name":"Nasi Lemak", "price":"6.00","image": "../../../assets/plus/menu/nasi_lemak.jpg", "recommended":true, "notAvailable":false},
+    { "cols": 2, "rows": 2, "y": 0, "x": 0, "type":"food" ,"name":"Nasi Goreng", "price":"6.50","image": "../../../assets/plus/menu/nasi_goreng.jpg", "recommended":false, "notAvailable":false},
+    { "cols": 2, "rows": 2, "y": 0, "x": 0, "type":"food" ,"name":"Mee Goreng", "price":"5.50","image": "../../../assets/plus/menu/mee_goreng.jpg", "recommended":false, "notAvailable":false},
+    { "cols": 2, "rows": 2, "y": 0, "x": 0, "type":"food" ,"name":"Bihun Goreng", "price":"5.00","image": "../../../assets/plus/menu/bihun_goreng.jpg", "recommended":false, "notAvailable":false},
+    { "cols": 2, "rows": 2, "y": 0, "x": 0, "type":"drink" ,"name":"Kopi Ais", "price":"3.00","image": "../../../assets/plus/menu/kopi_ais.jpg", "recommended":true, "notAvailable":false},
+    { "cols": 2, "rows": 2, "y": 0, "x": 0, "type":"drink" ,"name":"Teh O Ais", "price":"2.00","image": "../../../assets/plus/menu/teh_o_ais.jpg", "recommended":false, "notAvailable":false},
+    { "cols": 2, "rows": 2, "y": 0, "x": 0, "type":"drink" ,"name":"Teh Tarik", "price":"3.00","image": "../../../assets/plus/menu/teh_tarik.jpg", "recommended":false, "notAvailable":false},
+    { "cols": 2, "rows": 2, "y": 0, "x": 0, "type":"drink" ,"name":"Milo Ais", "price":"4.00","image": "../../../assets/plus/menu/milo_ais.jpg", "recommended":false, "notAvailable":false}
 ]

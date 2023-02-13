@@ -33,7 +33,9 @@ export class MenuPageComponent implements OnInit{
 
 
   options!: Safe;
-  dashboard: Array<GridsterItem> =[];
+  dashboardFood: Array<GridsterItem> =[];
+  dashboardDrink: Array<GridsterItem> =[];
+  dashboardRecommended: Array<GridsterItem> =[];
   listJson: any;
   locationName: any;
 
@@ -42,16 +44,24 @@ export class MenuPageComponent implements OnInit{
     this.appComponent.topBarFlag = true;
     this.code = this.route.snapshot.paramMap.get('code');
     this._jsonURL = "../../../assets/json/menu/"+this.code+".json";
-    // this.listJsonURL = "../../../assets/json/list.json";
     this.getJSON().subscribe(data => {
       console.log(data)
-      this.dashboard = data;
+      for(let i = 0; i < data.length; i++){
+        if(data[i].type == "food") {
+          this.dashboardFood.push(data[i]);
+        }
+        else {
+          this.dashboardDrink.push(data[i]);
+        }
+      }
+
+      for(let i = 0; i < data.length; i++){
+        if(data[i].recommended == true) {
+          this.dashboardRecommended.push(data[i]);
+        }
+      }
+
      });
-    // this.getListJSON().subscribe(data => {
-    //   this.listJson = data[0];
-    //   this.locationName = this.listJson[this.code].name
-    //   this.appComponent.locationName = this.locationName;
-    // });
   
   }
 
@@ -93,7 +103,7 @@ export class MenuPageComponent implements OnInit{
       maxCols: 12,
       minCols: 12,
       maxRows: 30,
-      minRows: 8,
+      // minRows: 8,
       gridType: GridType.ScrollVertical,
       displayGrid: DisplayGrid.None,
       pushItems: true,
@@ -118,20 +128,20 @@ export class MenuPageComponent implements OnInit{
    
   }
 
-  changedOptions(): void {
-    if (this.options.api && this.options.api.optionsChanged) {
-      this.options.api.optionsChanged();
-    }
-  }
+  // changedOptions(): void {
+  //   if (this.options.api && this.options.api.optionsChanged) {
+  //     this.options.api.optionsChanged();
+  //   }
+  // }
 
   removeItem($event: MouseEvent | TouchEvent, item: any): void {
     $event.preventDefault();
     $event.stopPropagation();
-    this.dashboard.splice(this.dashboard.indexOf(item), 1);
+    // this.dashboard.splice(this.dashboard.indexOf(item), 1);
   }
 
   addItem(): void {
-    this.dashboard.push({ x: 0, y: 0, cols: 1, rows: 1 });
+    // this.dashboard.push({ x: 0, y: 0, cols: 1, rows: 1 });
   }
 
   imageClick(event: any) {
@@ -150,12 +160,12 @@ export class MenuPageComponent implements OnInit{
     console.log(event)
   }
 
-  @HostListener('window:resize', ['$event'])
-  onWindowResize() {
-    if (this.options.api && this.options.api.optionsChanged) {
-      this.options.api.optionsChanged();
-    }
-  }
+  // @HostListener('window:resize', ['$event'])
+  // onWindowResize() {
+  //   if (this.options.api && this.options.api.optionsChanged) {
+  //     this.options.api.optionsChanged();
+  //   }
+  // }
 
 
 }
