@@ -1,0 +1,14 @@
+.card-row {
+    display: flex;
+    margin: 0 -0.5rem;
+  }
+  
+  .card-col {
+    flex: 1 0 calc(25% - 1rem);
+    margin: 0 0.5rem;
+    margin-bottom: -15px;
+  }
+
+  .custom-header {
+    font-size: x-small;
+  }

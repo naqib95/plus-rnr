@@ -1,0 +1,26 @@
+<div style="padding: 15px;">
+    <nb-card>
+        <nb-card-header style="position: relative;"><h6>Complaint<button *ngIf="admin == false" (click)="open()" style="text-align: right; float: right;" nbButton size="small" status="primary"><nb-icon icon="plus-outline"></nb-icon>Add Complaint</button></h6>
+        </nb-card-header>
+        <nb-card-body>
+            <table  datatable [dtOptions]="dtOptions" class="row-border hover table-bordered table-striped ">
+                <thead>
+                <tr>
+                    <!-- <th>Name</th> -->
+                    <th>Tenant</th>
+                    <th style="min-width: 600px;">Complaint</th>
+                    <th style="min-width: 200px;">Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let object of objects">
+                    <td>{{(object?.name)}}</td>
+                    <td>{{(object?.complaint)}}</td>
+                    <td>{{(object?.date)}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </nb-card-body>
+    </nb-card>
+</div>
+  

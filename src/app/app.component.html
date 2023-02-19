@@ -18,8 +18,8 @@
       <!-- User Profile -->
       <nb-user *ngIf="sideBarFlag"
           size="medium"
-          name={{displayName}}
-          title={{role}}
+          name={{adminName}}
+          title={{adminRole}}
           color="#cccccc"
           [nbContextMenu]="profileItems"
           nbContextMenuTag="profile-menu">
@@ -29,7 +29,9 @@
 
   <!-- Side Menu -->
   <nb-sidebar *ngIf="sideBarFlag" responsive  style="min-width: 70px;" class="start expand">
-      <nb-menu [items]="items" style="min-width: 70px;">
+      <nb-menu *ngIf="admin" [items]="items" style="min-width: 70px;">
+      </nb-menu>
+      <nb-menu *ngIf="!admin" [items]="itemsTenant" style="min-width: 70px;">
       </nb-menu>
   </nb-sidebar>
 

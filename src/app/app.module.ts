@@ -27,6 +27,13 @@ import { GridsterModule } from 'angular-gridster2';
 import { UserPageComponent } from './pages/user-page/user-page.component';
 import { MenuPageComponent } from './pages/menu-page/menu-page.component';
 import { ReviewListComponent } from './dialog/review-list/review-list.component';
+import { AdminComponent } from './pages/admin/admin.component';
+import { AdminApprovalComponent } from './pages/admin-approval/admin-approval.component';
+import { AddFeeComponent } from './dialog/add-fee/add-fee.component';
+import { ComplaintComponent } from './pages/complaint/complaint.component';
+import { SubmitComplaintComponent } from './dialog/submit-complaint/submit-complaint.component';
+import { TenantComponent } from './pages/tenant/tenant.component';
+import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 
 
 @NgModule({
@@ -43,6 +50,13 @@ import { ReviewListComponent } from './dialog/review-list/review-list.component'
     UserPageComponent,
     MenuPageComponent,
     ReviewListComponent,
+    AdminComponent,
+    AdminApprovalComponent,
+    AddFeeComponent,
+    ComplaintComponent,
+    SubmitComplaintComponent,
+    TenantComponent,
+    LandingPageComponent,
 
   ],
   imports: [
@@ -101,14 +115,18 @@ import { ReviewListComponent } from './dialog/review-list/review-list.component'
     KpsocDialogComponent,
     AvigilonCctvComponent,
     ReviewListComponent,
-    UserPageComponent
+    UserPageComponent,
+    AddFeeComponent
     
   ],
   providers: [
     AuthService,
     TestComponent,
     UserPageComponent,
-    AppComponent
+    AppComponent,
+    AddFeeComponent,
+    AdminApprovalComponent,
+    ComplaintComponent
     // { provide: HTTP_INTERCEPTORS, useClass: AuthService, multi: true }
   ],
   bootstrap: [AppComponent]

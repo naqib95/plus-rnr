@@ -20,6 +20,9 @@ export class AppComponent implements OnInit{
   sideBarFlag = false;
   topBarFlag = false;
   locationName = "";
+  admin = true;
+  adminName: any;
+  adminRole: any;
 
   constructor(
       private sidebarService: NbSidebarService,
@@ -29,10 +32,8 @@ export class AppComponent implements OnInit{
       private router: Router
     ) {
       this.title = "PLUS"
-
-      // Comment this out when in Dev mode
-      // this.authService.isLoggedIn();
-
+      this.adminName = "admin";
+      this.adminRole = "admin-PLUS";
     }
 
   ngOnInit() {
@@ -46,7 +47,7 @@ export class AppComponent implements OnInit{
       )
       .subscribe(title => {
         if(title == "Logout"){
-          this.authService.logout();
+          this.router.navigate(['/landing-page']);
         }
       });
 
@@ -81,41 +82,41 @@ export class AppComponent implements OnInit{
   items: NbMenuItem[] = [
     {
       title: 'Home',
-      icon: 'home-outline',
-      link: '/home'
-    },
-    {
-      title: 'Facility Performance',
       icon: 'bar-chart-outline',
-      link: '/facility-performance'
+      link: '/admin'
     },
     {
-      title: 'Data Entry',
+      title: 'Tenant Fee',
+      icon: 'home-outline',
+      link: '/admin-approval'
+    },
+    {
+      title: 'Complaint',
       icon: 'edit-outline',
-      children: [{
-        title: 'Facility Report',
-        link: '/facility-report',
-        icon: 'file-outline'
-      }]
+      link: '/complaint'
+    }
+    // {
+    //   title: 'User Management',
+    //   icon: 'people-outline',
+    //   link: '/user-management'
+    // }
+  ];
+
+  itemsTenant: NbMenuItem[] = [
+    {
+      title: 'Home',
+      icon: 'bar-chart-outline',
+      link: '/tenant'
     },
     {
-      title: 'Data Storage',
-      icon: 'hard-drive-outline',
-      children: [{
-        title: 'Folder Manager',
-        link: '/folder-manager',
-        icon: 'folder-outline'
-      },
-      {
-        title: 'Upload',
-        link: '/file-upload',
-        icon: 'upload-outline'
-      }]
+      title: 'Tenant Fee',
+      icon: 'home-outline',
+      link: '/admin-approval'
     },
     {
-      title: 'Avigilon CCTV',
-      icon: 'camera-outline',
-      link: '/avigilon-cctv'
+      title: 'Complaint',
+      icon: 'edit-outline',
+      link: '/complaint'
     }
     // {
     //   title: 'User Management',

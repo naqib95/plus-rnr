@@ -1,0 +1,36 @@
+<div style="padding: 15px;">
+    <nb-card>
+        <nb-card-header style="position: relative;"><h6>Tenant Fee <button *ngIf="admin" (click)="open()" style="text-align: right; float: right;" nbButton size="small" status="primary"><nb-icon icon="plus-outline"></nb-icon>Add</button></h6>
+        </nb-card-header>
+        <nb-card-body>
+            <table  datatable [dtOptions]="dtOptions" class="row-border hover table-bordered table-striped ">
+                <thead>
+                <tr>
+                    <!-- <th>Name</th> -->
+                    <th>Tenant</th>
+                    <th style="min-width: 200px;">Pay</th>
+                    <th style="min-width: 200px;">Fee</th>
+                    <th style="min-width: 200px;">Status</th>
+                    <th style="text-align: right;">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let object of objects;let i = index">
+                    <td>{{(object?.name)}}</td>
+                    <td>{{(object?.pay)}}</td>
+                    <td>{{(object?.fee)}}</td>
+                    <td [ngStyle]="{'color': object?.status == 'Rejected' ? 'red' : object?.status == 'Approved' ? 'green' : 'black'}">{{(object?.status)}}</td>
+                    <td *ngIf="admin" style="text-align: right;">
+                        <button style="margin-right: 10px; width: 80px;" *ngIf="object?.status == 'Pending'" nbButton size="small" status="success" (click)="approval(i)"><nb-icon icon="checkmark-outline"></nb-icon>Approve</button>
+                        <button style="width: 80px;" *ngIf="object?.status == 'Pending'" nbButton size="small" status="danger" (click)="reject(i)"><nb-icon icon="close-outline"></nb-icon>Reject</button>
+                    </td>
+                    <td *ngIf="!admin" style="text-align: right;">
+                        <button style="margin-right: 10px; width: 80px;" *ngIf="object?.status == 'Due'" nbButton size="small" status="primary" (click)="submit(i)">Submit</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </nb-card-body>
+    </nb-card>
+</div>
+  

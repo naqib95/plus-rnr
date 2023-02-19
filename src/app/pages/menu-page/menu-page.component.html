@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <gridster style="background-color: #edf1f7;" [options]="options">
-        <gridster-item [item]="item" *ngFor="let item of dashboardRecommended" >
+        <!-- <gridster-item [item]="item" *ngFor="let item of dashboardRecommended" >
                 <nb-card style="text-align: center; height: 100%;">
                   <nb-card-header style="font-size: 11px; padding: 12px !important">{{ item['name'] }}</nb-card-header>
                   <nb-card-body style="padding: 0px; overflow: hidden;">
@@ -12,10 +12,10 @@
                     RM{{ item['price'] }}
                   </nb-card-footer>
                 </nb-card>
-        </gridster-item>
-      </gridster>
+        </gridster-item> -->
+      <!-- </gridster> -->
 
-      <gridster style="background-color: #edf1f7;" [options]="options">
+      <!-- <gridster style="background-color: #edf1f7;" [options]="options"> -->
         <gridster-item [item]="item" *ngFor="let item of dashboardFood" >
                   <nb-card style="text-align: center; height: 100%;">
                     <nb-card-header style="font-size: 11px; padding: 12px !important">{{ item['name'] }}</nb-card-header>
@@ -29,9 +29,9 @@
                     </nb-card-footer>
                   </nb-card>
         </gridster-item>
-      </gridster>
+      <!-- </gridster> -->
         
-      <gridster style="background-color: #edf1f7;" [options]="options">
+      <!-- <gridster style="background-color: #edf1f7;" [options]="options"> -->
         <gridster-item [item]="item" *ngFor="let item of dashboardDrink" >
           <nb-card style="text-align: center; height: 100%;">
             <nb-card-header style="font-size: 11px; padding: 12px !important">{{ item['name'] }}</nb-card-header>

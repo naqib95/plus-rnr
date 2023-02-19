@@ -1,0 +1,221 @@
+<div *ngIf="flagCode == 'All'" style="padding: 15px">     
+    <div class="card-row">
+        <div class="card-col">
+            <nb-card style="text-align: center;" >
+                <nb-card-body>
+                    <div style="width: 100%;">
+                        <nb-select (selectedChange)="dropdownChange($event)" style="text-align: right; float: right; padding-right: 0.5rem;" placeholder="Gurun (North Bound)">
+                            <nb-option value="Gurun (Noth Bound)">Gurun (North Bound)</nb-option>
+                        </nb-select>
+                    </div>
+                </nb-card-body>
+            </nb-card>
+        </div>
+    </div>
+    <div class="card-row" style="width: 100%;">
+        <div class="card-col">
+            <nb-card  style="text-align: center;" >
+                <nb-card-header><div><b class="custom-header">Total Current Month's TNB Incoming<img style="height: 25px; width: 25px; float: right;" src="../../../assets/plus/tnb.png"></b></div></nb-card-header>
+                <nb-card-body>
+                    <div style="width: 100%; min-height: 180px" echarts [options]="TNBCurrMonthInc"></div>
+                </nb-card-body>
+            </nb-card>
+        </div>
+        <div class="card-col">
+            <nb-card style="text-align: center;" >
+                <nb-card-header><b class="custom-header">Total Current Month's TNB Tariff<img style="height: 25px; width: 25px; float: right;" src="../../../assets/plus/tnb.png"></b></nb-card-header>
+                <nb-card-body>
+                    <div style="width: 100%; min-height: 180px" echarts [options]="TNBTotal"></div>
+                </nb-card-body>
+            </nb-card>
+        </div>
+        <div class="card-col">
+            <nb-card  style="text-align: center;" >
+                <nb-card-header><b class="custom-header">Total Current Month's SYABAS Water Meter<img style="height: 18px; width: 18px; float: right;" src="../../../assets/plus/syabas.png"></b></nb-card-header>
+                <nb-card-body>
+                    <div style="width: 100%; min-height: 180px" echarts [options]="SyabasCurrMonth"></div>
+                </nb-card-body>
+            </nb-card>
+        </div>
+        <div class="card-col">
+            <nb-card style="text-align: center;" >
+                <nb-card-header><b class="custom-header">Total Current Month's SYABAS Tariff<img style="height: 18px; width: 18px; float: right;" src="../../../assets/plus/syabas.png"></b></nb-card-header>
+                <nb-card-body>
+                    <div style="width: 100%; min-height: 180px" echarts [options]="SyabasTotal"></div>
+                </nb-card-body>
+            </nb-card>
+        </div>
+    </div>
+    <div class="card-row" style="width: 100%;">
+        <div class="card-col">
+            <nb-card style="text-align: center;" >
+                <nb-card-header><b class="custom-header">TNB Monthly Consumption<img style="height: 25px; width: 25px; float: right;" src="../../../assets/plus/tnb.png"></b></nb-card-header>
+                <nb-card-body>
+                    <div style="width: 100%; min-height: 250px" echarts [options]="IncMonthlyConsumption"></div>
+                </nb-card-body>
+            </nb-card>
+        </div>
+        <div class="card-col">
+            <nb-card style="text-align: center;" >
+                <nb-card-header><b class="custom-header">SYABAS Monthly Consumption<img style="height: 18px; width: 18px; float: right;" src="../../../assets/plus/syabas.png"></b></nb-card-header>
+                <nb-card-body>
+                    <div style="width: 100%; min-height: 250px" echarts [options]="syabasMonthlyConsumption"></div>
+                </nb-card-body>
+            </nb-card>
+        </div>
+    </div>
+
+</div>
+
+<!-- GNB -->
+
+<div *ngIf="flagCode == 'Gurun (North Bound)' && flagCodeTenant == 'Total Tenant'" style="padding: 15px">     
+    <div class="card-row">
+        <div class="card-col">
+            <nb-card style="text-align: center;" >
+                <nb-card-body>
+                    <div style="width: 100%;">
+                        <nb-select (selectedChange)="dropdownChange($event)" style="text-align: right; float: right; padding-right: 0.5rem;" placeholder={{flagCode}}>
+                            <nb-option value="All">Total</nb-option>
+                            <nb-option value="Gurun (Noth Bound)">Gurun (North Bound)</nb-option>
+                        </nb-select>
+                        <nb-select  [(ngModel)]="tenantNgModel" (selectedChange)="dropdownChangeTenant($event)" style="text-align: right; float: right; padding-right: 0.5rem;" placeholder="Total Tenant">
+                            <nb-option value="Total Tenant">Total Tenant</nb-option>
+                            <nb-option value="Selera Makan">Selera Makan</nb-option>
+                        </nb-select>
+                    </div>
+                </nb-card-body>
+            </nb-card>
+        </div>
+    </div>
+    <div class="card-row" style="width: 100%;">
+        <div class="card-col">
+            <nb-card  style="text-align: center;" >
+                <nb-card-header><b class="custom-header">Total Current Month's TNB Incoming</b></nb-card-header>
+                <nb-card-body>
+                    <div style="width: 100%; min-height: 180px" echarts [options]="TNBCurrMonthInc1"></div>
+                </nb-card-body>
+            </nb-card>
+        </div>
+        <div class="card-col">
+            <nb-card style="text-align: center;" >
+                <nb-card-header><b class="custom-header">Total Current Month's TNB Tariff</b></nb-card-header>
+                <nb-card-body>
+                    <div style="width: 100%; min-height: 180px" echarts [options]="TNBTotal1"></div>
+                </nb-card-body>
+            </nb-card>
+        </div>
+        <div class="card-col">
+            <nb-card  style="text-align: center;" >
+                <nb-card-header><b class="custom-header">Total Current Month's SYABAS Water Meter</b></nb-card-header>
+                <nb-card-body>
+                    <div style="width: 100%; min-height: 180px" echarts [options]="SyabasCurrMonth1"></div>
+                </nb-card-body>
+            </nb-card>
+        </div>
+        <div class="card-col">
+            <nb-card style="text-align: center;" >
+                <nb-card-header><b class="custom-header">Total Current Month's SYABAS Tariff</b></nb-card-header>
+                <nb-card-body>
+                    <div style="width: 100%; min-height: 180px" echarts [options]="SyabasTotal1"></div>
+                </nb-card-body>
+            </nb-card>
+        </div>
+    </div>
+    <div class="card-row">
+        <div class="card-col">
+            <nb-card style="text-align: center;" >
+                <nb-card-header><b class="custom-header">TNB Monthly Consumption</b></nb-card-header>
+                <nb-card-body>
+                    <div style="width: 100%; min-height: 250px" echarts [options]="IncMonthlyConsumption1"></div>
+                </nb-card-body>
+            </nb-card>
+        </div>
+        <div class="card-col">
+            <nb-card style="text-align: center;" >
+                <nb-card-header><b class="custom-header">SYABAS Monthly Consumption</b></nb-card-header>
+                <nb-card-body>
+                    <div style="width: 100%; min-height: 250px" echarts [options]="syabasMonthlyConsumption1"></div>
+                </nb-card-body>
+            </nb-card>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- Selera Makan -->
+
+<div *ngIf="flagCode == 'Gurun (North Bound)' && flagCodeTenant == 'Selera Makan'" style="padding: 15px">     
+    <div class="card-row">
+        <div class="card-col">
+            <nb-card style="text-align: center;" >
+                <nb-card-body>
+                    <div style="width: 100%;">
+                        <nb-select (selectedChange)="dropdownChange($event)" style="text-align: right; float: right; padding-right: 0.5rem;" placeholder={{flagCode}}>
+                            <nb-option value="All">Total</nb-option>
+                            <nb-option value="Gurun (Noth Bound)">Gurun (North Bound)</nb-option>
+                        </nb-select>
+                        <nb-select [(ngModel)]="tenantNgModel" (selectedChange)="dropdownChangeTenant($event)" style="text-align: right; float: right; padding-right: 0.5rem;" placeholder="Total Tenant">
+                            <nb-option value="Total Tenant">Total Tenant</nb-option>
+                            <nb-option value="Selera Makan">Selera Makan</nb-option>
+                        </nb-select>
+                    </div>
+                </nb-card-body>
+            </nb-card>
+        </div>
+    </div>
+    <div class="card-row" style="width: 100%;">
+        <div class="card-col">
+            <nb-card  style="text-align: center;" >
+                <nb-card-header><b class="custom-header">Total Current Month's TNB Incoming</b></nb-card-header>
+                <nb-card-body>
+                    <div style="width: 100%; min-height: 180px" echarts [options]="TNBCurrMonthInc2"></div>
+                </nb-card-body>
+            </nb-card>
+        </div>
+        <div class="card-col">
+            <nb-card style="text-align: center;" >
+                <nb-card-header><b class="custom-header">Total Current Month's TNB Tariff</b></nb-card-header>
+                <nb-card-body>
+                    <div style="width: 100%; min-height: 180px" echarts [options]="TNBTotal2"></div>
+                </nb-card-body>
+            </nb-card>
+        </div>
+        <div class="card-col">
+            <nb-card  style="text-align: center;" >
+                <nb-card-header><b class="custom-header">Total Current Month's SYABAS Water Meter</b></nb-card-header>
+                <nb-card-body>
+                    <div style="width: 100%; min-height: 180px" echarts [options]="SyabasCurrMonth2"></div>
+                </nb-card-body>
+            </nb-card>
+        </div>
+        <div class="card-col">
+            <nb-card style="text-align: center;" >
+                <nb-card-header><b class="custom-header">Total Current Month's SYABAS Tariff</b></nb-card-header>
+                <nb-card-body>
+                    <div style="width: 100%; min-height: 180px" echarts [options]="SyabasTotal2"></div>
+                </nb-card-body>
+            </nb-card>
+        </div>
+    </div>
+    <div class="card-row">
+        <div class="card-col">
+            <nb-card style="text-align: center;" >
+                <nb-card-header><b class="custom-header">TNB Monthly Consumption</b></nb-card-header>
+                <nb-card-body>
+                    <div style="width: 100%; min-height: 250px" echarts [options]="IncMonthlyConsumption2"></div>
+                </nb-card-body>
+            </nb-card>
+        </div>
+        <div class="card-col">
+            <nb-card style="text-align: center;" >
+                <nb-card-header><b class="custom-header">SYABAS Monthly Consumption</b></nb-card-header>
+                <nb-card-body>
+                    <div style="width: 100%; min-height: 250px" echarts [options]="syabasMonthlyConsumption2"></div>
+                </nb-card-body>
+            </nb-card>
+        </div>
+    </div>
+
+</div>

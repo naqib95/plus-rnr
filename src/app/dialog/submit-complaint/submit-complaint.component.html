@@ -1,0 +1,13 @@
+<nb-card style="width: 100%; max-height: 100%;">
+    <nb-card-header>Add Fee</nb-card-header>
+    <nb-card-body>
+      <div style="padding-bottom: 0.25rem;">
+        <div style="padding-bottom: 0.5rem;">Tenant: <input disabled [(ngModel)]="tenantNgModel" nbInput fullWidth fieldSize="small" style="padding-bottom: 0.2rem;"></div>
+        <div style="padding-bottom: 0.5rem;">Complaint: <textarea [(ngModel)]="complaintNgModel" nbInput fullWidth fieldSize="small" placeholder="Complaint" style="padding-bottom: 0.2rem;"></textarea></div>
+        <br>
+      </div>
+      
+      <button style="float: right;" (click)="submitComplaint()" nbButton status="primary">Submit</button>
+      <button  style="float: right; margin-right: 10px;" nbButton (click)="closeDialog()">Close</button>
+    </nb-card-body>
+  </nb-card>

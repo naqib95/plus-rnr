@@ -1,0 +1,19 @@
+<nb-card style="width: 100%; max-height: 100%;">
+    <nb-card-header>Add Fee</nb-card-header>
+    <nb-card-body>
+      <div style="padding-bottom: 0.25rem;">
+        <!-- <div style="padding-bottom: 0.5rem;">Tenant: <input [(ngModel)]="tenantNgModel" type="text" nbInput fullWidth fieldSize="small" placeholder="Name" style="padding-bottom: 0.2rem;"></div> -->
+        <div style="padding-bottom: 0.5rem;">Tenant:
+            <nb-select [(ngModel)]="tenantNgModel" fullWidth placeholder="Select Tenant">
+                <nb-option value="Selera Perak">Selera Perak</nb-option>
+            </nb-select>
+        </div>
+        <div style="padding-bottom: 0.5rem;">Pay: <input [(ngModel)]="payNgModel" nbInput fullWidth fieldSize="small" placeholder="Pay" style="padding-bottom: 0.2rem;"></div>
+        <div style="padding-bottom: 0.5rem;">Fee: <input [(ngModel)]="feeNgModel" type="number" nbInput fullWidth fieldSize="small" placeholder="Fee" style="padding-bottom: 0.2rem;"></div>
+        <br>
+      </div>
+      
+      <button style="float: right;" (click)="submitFee()" nbButton status="primary">Submit</button>
+      <button  style="float: right; margin-right: 10px;" nbButton (click)="closeDialog()">Close</button>
+    </nb-card-body>
+  </nb-card>
